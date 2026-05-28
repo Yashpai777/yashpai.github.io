@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Dinesh Pai — AI Operations & Automation Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #1D9E75;
+      --accent-light: #E1F5EE;
+      --accent-mid: #9FE1CB;
+      --accent-dark: #085041;
+      --accent-deep: #0F6E56;
+      --bg: #ffffff;
+      --bg2: #f7f7f5;
+      --text: #1a1a1a;
+      --text2: #6b6b6b;
+      --border: rgba(0,0,0,0.1);
+      --border2: rgba(0,0,0,0.18);
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141414;
+        --bg2: #1e1e1e;
+        --text: #f0f0f0;
+        --text2: #9a9a9a;
+        --border: rgba(255,255,255,0.1);
+        --border2: rgba(255,255,255,0.18);
+        --accent-light: #0a2e22;
+        --accent-mid: #0f4a33;
+        --accent-dark: #9FE1CB;
+        --accent-deep: #5DCAA5;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border);
+      z-index: 100;
+      padding: 0 2rem;
+    }
+
+    .nav-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text2);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white !important;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .kicker {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 1.25rem;
+    }
+
+    .headline {
+      font-family: 'Syne', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.0;
+      margin-bottom: 1.5rem;
+    }
+
+    .headline span { color: var(--accent); }
+
+    .subline {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text2);
+      max-width: 560px;
+      margin-bottom: 2rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 13px;
+      border-radius: 999px;
+      border: 0.5px solid var(--border2);
+      color: var(--text2);
+      background: var(--bg2);
+    }
+
+    .pill.live {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      border-color: var(--accent-mid);
+    }
+
+    /* Sections */
+    section { margin-bottom: 3rem; }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 1.25rem;
+    }
+
+    .divider {
+      height: 0.5px;
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* Stats */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+
+    .stat {
+      background: var(--bg2);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.2rem;
+    }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text2);
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+
+    /* Work items */
+    .work-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .work-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 1.1rem 1.2rem;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--bg);
+      transition: border-color 0.15s;
+    }
+
+    .work-item:hover { border-color: var(--accent-mid); }
+
+    .work-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-md);
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-deep);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .work-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .work-desc {
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    .work-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      margin-top: 7px;
+    }
+
+    /* Skills */
+    .skill-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .skill-col-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .stk {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .stk-item {
+      font-size: 11px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      border: 0.5px solid var(--border);
+      color: var(--text2);
+      background: var(--bg2);
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 1.5rem;
+    }
+
+    .tl-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 24px;
+      flex-shrink: 0;
+    }
+
+    .tl-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .tl-line {
+      width: 1px;
+      background: var(--border);
+      flex: 1;
+      margin-top: 5px;
+    }
+
+    .tl-role {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .tl-co {
+      font-size: 12px;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .tl-date {
+      font-size: 11px;
+      color: var(--text2);
+      margin-top: 2px;
+    }
+
+    .tl-note {
+      font-size: 12px;
+      color: var(--text2);
+      margin-top: 5px;
+      line-height: 1.6;
+    }
+
+    /* Education */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0.9rem 0;
+      border-bottom: 0.5px solid var(--border);
+      gap: 1rem;
+    }
+
+    .edu-item:last-child { border-bottom: none; }
+
+    .edu-degree {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .edu-school {
+      font-size: 12px;
+      color: var(--text2);
+      margin-top: 2px;
+    }
+
+    .edu-year {
+      font-size: 11px;
+      color: var(--text2);
+      white-space: nowrap;
+    }
+
+    /* Certs */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg);
+    }
+
+    .cert-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-md);
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-deep);
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+
+    .cert-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .cert-status {
+      font-size: 10px;
+      color: var(--text2);
+      margin-top: 2px;
+    }
+
+    /* Languages */
+    .lang-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .lang-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px;
+      border: 0.5px solid var(--border);
+      border-radius: 999px;
+      background: var(--bg2);
+    }
+
+    .lang-flag { font-size: 20px; }
+
+    .lang-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .lang-level {
+      font-size: 11px;
+      color: var(--text2);
+    }
+
+    /* Contact */
+    .contact-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      padding: 1.5rem 1.75rem;
+      border: 0.5px solid var(--accent-mid);
+      border-radius: var(--radius-lg);
+      background: var(--accent-light);
+      margin-top: 3rem;
+    }
+
+    .ct {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .cs {
+      font-size: 12px;
+      color: var(--accent-deep);
+      margin-top: 3px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--accent-dark);
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .contact-link:hover { opacity: 0.85; }
+
+    .contact-link.ghost {
+      background: transparent;
+      color: var(--accent-dark);
+      border: 0.5px solid var(--accent-deep);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 11px;
+      color: var(--text2);
+      border-top: 0.5px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .headline { font-size: 36px; }
+      .skill-cols { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Yash Pai</a>
+    <ul class="nav-links">
+      <li><a href="#built">Built</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="kicker">Berlin &nbsp;·&nbsp; Open to work &nbsp;·&nbsp; AI Operations</div>
+    <div class="headline">
+      I don't just talk<br>about AI.<br><span>I build it.</span>
+    </div>
+    <div class="subline">
+      From zero coding experience to shipping a verified n8n node used by real customers — I build automation systems that actually run in production. Currently at Voico.ai, making AI voice agents accessible across every major platform.
+    </div>
+    <div class="pill-row">
+      <span class="pill live">Available now</span>
+      <span class="pill">n8n</span>
+      <span class="pill">Claude · OpenAI</span>
+      <span class="pill">MCP Servers</span>
+      <span class="pill">Workflow Automation</span>
+      <span class="pill">Lead Gen Pipelines</span>
+      <span class="pill">MSc Digital Transformation</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">By the numbers</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num">1K+</div>
+        <div class="stat-label">Leads processed per week, fully automated</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Production automation systems shipped</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0→1</div>
+        <div class="stat-label">Custom n8n node — no prior coding experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Platforms integrated: n8n, Claude & OpenAI MCP</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" id="built"></div>
+
+  <section>
+    <div class="section-title">What I've actually built</div>
+    <div class="work-list">
+      <div class="work-item">
+        <div class="work-icon"><i class="ti ti-mail-forward"></i></div>
+        <div>
+          <div class="work-title">AI outreach pipeline — Apollo → Apify → OpenAI → Instantly</div>
+          <div class="work-desc">Fully automated cold email system that researches each prospect, writes a personalised first-line, and sends it — no human in the loop. Runs 1,000+ leads/week for the sales team.</div>
+          <span class="work-tag">In production</span>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-icon"><i class="ti ti-radar"></i></div>
+        <div>
+          <div class="work-title">Weekly competitor intelligence automation</div>
+          <div class="work-desc">Monitors 5–6 competitor websites, LinkedIn activity, and ad changes every week. Summarises everything and drops it straight into the CEO's inbox — automatically.</div>
+          <span class="work-tag">In production</span>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-icon"><i class="ti ti-plug-connected"></i></div>
+        <div>
+          <div class="work-title">Verified n8n community node for Voico.ai</div>
+          <div class="work-desc">Built and published a custom n8n node from scratch — now publicly available for any customer to use. Shipped from zero TypeScript experience to verified status on the n8n marketplace.</div>
+          <span class="work-tag">Live on marketplace</span>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-icon"><i class="ti ti-server-bolt"></i></div>
+        <div>
+          <div class="work-title">MCP server for Claude & OpenAI</div>
+          <div class="work-desc">Building a Model Context Protocol server to make Voico.ai's product available natively inside Claude and OpenAI — so customers can use AI voice agents directly from the tools they already work in.</div>
+          <span class="work-tag">In progress</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" id="skills"></div>
+
+  <section>
+    <div class="section-title">Tools I work with</div>
+    <div class="skill-cols">
+      <div>
+        <div class="skill-col-title">AI & automation</div>
+        <div class="stk">
+          <span class="stk-item">n8n</span>
+          <span class="stk-item">Claude</span>
+          <span class="stk-item">OpenAI API</span>
+          <span class="stk-item">Apify</span>
+          <span class="stk-item">Instantly</span>
+          <span class="stk-item">Apollo.io</span>
+          <span class="stk-item">MCP</span>
+          <span class="stk-item">Prompt Engineering</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-col-title">Data & marketing</div>
+        <div class="stk">
+          <span class="stk-item">Power BI</span>
+          <span class="stk-item">Google Workspace</span>
+          <span class="stk-item">Python</span>
+          <span class="stk-item">SQL</span>
+          <span class="stk-item">A/B Testing</span>
+          <span class="stk-item">SEO</span>
+          <span class="stk-item">Campaign Analytics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" id="experience"></div>
+
+  <section>
+    <div class="section-title">Where I've been</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div>
+          <div class="tl-role">Digital Operations Specialist</div>
+          <div class="tl-co">Voico.ai · Berlin</div>
+          <div class="tl-date">Jan 2026 – Present</div>
+          <div class="tl-note">Building AI automation systems, custom integrations, and MCP infrastructure from the ground up.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div>
+          <div class="tl-role">Brand Protection Analyst</div>
+          <div class="tl-co">Corsearch · USA (Remote)</div>
+          <div class="tl-date">Aug 2021 – Aug 2023</div>
+          <div class="tl-note">Market intelligence, client dashboards, and data analysis for Nintendo, MLB, and others.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div></div>
+        <div>
+          <div class="tl-role">Senior Technical Support</div>
+          <div class="tl-co">Firstsource Technology Solutions · India</div>
+          <div class="tl-date">Aug 2019 – Jun 2021</div>
+          <div class="tl-note">25+ clients daily, cross-functional escalation, structured data-driven issue tracking.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="section-title">Education</div>
+    <div class="edu-list">
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">MSc in Digital Transformation</div>
+          <div class="edu-school">GISMA University of Applied Sciences, Potsdam, Germany</div>
+        </div>
+        <div class="edu-year">Mar 2024 – Present</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">B.Sc. in Business Administration & IT</div>
+          <div class="edu-school">University of Mumbai</div>
+        </div>
+        <div class="edu-year">May 2014 – Jul 2017</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="section-title">Certifications</div>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <div class="cert-icon"><i class="ti ti-certificate"></i></div>
+        <div>
+          <div class="cert-name">PMI – CAPM</div>
+          <div class="cert-status">In Progress</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon"><i class="ti ti-settings-automation"></i></div>
+        <div>
+          <div class="cert-name">Asana Workflow Management</div>
+          <div class="cert-status">Completed</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon"><i class="ti ti-robot"></i></div>
+        <div>
+          <div class="cert-name">Anthropic Claude Code</div>
+          <div class="cert-status">Completed</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon"><i class="ti ti-brand-linkedin"></i></div>
+        <div>
+          <div class="cert-name">LinkedIn Marketing Specialist</div>
+          <div class="cert-status">Completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="section-title">Languages</div>
+    <div class="lang-row">
+      <div class="lang-badge">
+        <span class="lang-flag">🇬🇧</span>
+        <div>
+          <div class="lang-name">English</div>
+          <div class="lang-level">C1 — Proficient</div>
+        </div>
+      </div>
+      <div class="lang-badge">
+        <span class="lang-flag">🇩🇪</span>
+        <div>
+          <div class="lang-name">German</div>
+          <div class="lang-level">B1 — In Progress</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="contact"></div>
+
+  <div class="contact-bar">
+    <div>
+      <div class="ct">Let's build something together</div>
+      <div class="cs">yashhpai.yp14@gmail.com &nbsp;·&nbsp; Berlin, Germany</div>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:yashhpai.yp14@gmail.com"><i class="ti ti-mail"></i> Email me</a>
+      <a class="contact-link ghost" href="https://linkedin.com/in/yashpai5" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      <a class="contact-link ghost" href="https://github.com/Yashpai777" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i> GitHub</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Built by Yash Dinesh Pai · Berlin 2026
+</footer>
+
+</body>
+</html>
